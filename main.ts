@@ -1,12 +1,8 @@
-input.onButtonPressed(Button.A, function () {
-    basic.showLeds(`
-        . # . # .
-        . . . . .
-        . # # # .
-        . # . # .
-        . # # # .
-        `)
-    music.playTone(440, music.beat(BeatFraction.Whole))
+input.onPinPressed(TouchPin.P0, function () {
+    music.playTone(523, music.beat(BeatFraction.Whole))
+})
+input.onGesture(Gesture.LogoUp, function () {
+    music.playTone(523, music.beat(BeatFraction.Quarter))
 })
 input.onButtonPressed(Button.AB, function () {
     music.playTone(262, music.beat(BeatFraction.Quarter))
@@ -22,20 +18,4 @@ input.onButtonPressed(Button.AB, function () {
     music.rest(music.beat(BeatFraction.Whole))
     music.playTone(330, music.beat(BeatFraction.Whole))
 })
-input.onButtonPressed(Button.B, function () {
-    basic.showLeds(`
-        . # . # .
-        . . . . .
-        . . . . .
-        # . . . #
-        . # # # .
-        `)
-    music.playTone(392, music.beat(BeatFraction.Whole))
-})
-basic.showLeds(`
-    . # . # .
-    . . . . .
-    . # # # .
-    . # . # .
-    . # # # .
-    `)
+input.setSoundThreshold(SoundThreshold.Quiet, 0)
