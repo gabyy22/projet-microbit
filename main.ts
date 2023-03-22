@@ -1,21 +1,22 @@
 input.onPinPressed(TouchPin.P0, function () {
-    music.playTone(523, music.beat(BeatFraction.Whole))
+    music.playTone(330, music.beat(BeatFraction.Quarter))
 })
-input.onGesture(Gesture.LogoUp, function () {
+input.onButtonPressed(Button.A, function () {
+    music.playMelody("G F G A - F E D ", 120)
+})
+input.onPinPressed(TouchPin.P2, function () {
     music.playTone(523, music.beat(BeatFraction.Quarter))
 })
-input.onButtonPressed(Button.AB, function () {
-    music.playTone(262, music.beat(BeatFraction.Quarter))
-    music.rest(music.beat(BeatFraction.Whole))
-    music.playTone(262, music.beat(BeatFraction.Quarter))
-    music.rest(music.beat(BeatFraction.Whole))
-    music.playTone(294, music.beat(BeatFraction.Quarter))
-    music.rest(music.beat(BeatFraction.Whole))
-    music.playTone(262, music.beat(BeatFraction.Quarter))
-    music.rest(music.beat(BeatFraction.Whole))
-    music.rest(music.beat(BeatFraction.Whole))
-    music.playTone(349, music.beat(BeatFraction.Half))
-    music.rest(music.beat(BeatFraction.Whole))
-    music.playTone(330, music.beat(BeatFraction.Whole))
+input.onButtonPressed(Button.B, function () {
+    music.playMelody("E B C5 A B G A F ", 120)
 })
-input.setSoundThreshold(SoundThreshold.Quiet, 0)
+input.onPinPressed(TouchPin.P1, function () {
+    music.playTone(494, music.beat(BeatFraction.Quarter))
+})
+basic.showLeds(`
+    . # . # .
+    . # . # .
+    . . . . .
+    # . . . #
+    . # # # .
+    `)
